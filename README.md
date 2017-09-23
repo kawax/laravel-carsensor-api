@@ -16,7 +16,7 @@ composer require revolution/laravel-carsensor-api
 ### Add to config/services.php
 ```
     'carsensor' => [
-        'key' => env('CARSENSOR_API_KEY'),
+        'key' => env('CARSENSOR_API_KEY', ''),
     ],
 ```
 
