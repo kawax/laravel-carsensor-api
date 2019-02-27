@@ -15,7 +15,7 @@ class CarSensorTest extends TestCase
      */
     protected $client;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -26,5 +26,4 @@ class CarSensorTest extends TestCase
     {
         $this->assertInstanceOf('Revolution\CarSensor\CarSensorClient', $this->client);
     }
-
 }

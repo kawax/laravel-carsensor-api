@@ -1,10 +1,10 @@
 <?php
 
-namespace Revolution\CarSensor;
+namespace Revolution\CarSensor\Contracts;
 
 use GuzzleHttp\ClientInterface;
 
-interface CarSensorClientInterface
+interface Factory
 {
     /**
      * @param array $query
@@ -33,35 +33,35 @@ interface CarSensorClientInterface
      *
      * @return $this
      */
-    public function setApiUrl(string $url): CarSensorClientInterface;
+    public function setApiUrl(string $url): Factory;
 
     /**
      * @param string $version
      *
      * @return $this
      */
-    public function setApiVersion(string $version): CarSensorClientInterface;
+    public function setApiVersion(string $version): Factory;
 
     /**
      * @param ClientInterface $client
      *
      * @return $this
      */
-    public function setClient(ClientInterface $client): CarSensorClientInterface;
+    public function setClient(ClientInterface $client): Factory;
 
     /**
      * @param string $key
      *
      * @return $this
      */
-    public function setKey(string $key): CarSensorClientInterface;
+    public function setKey(string $key): Factory;
 
     /**
      * @param string $assoc
      *
      * @return $this
      */
-    public function setAssoc(string $assoc): CarSensorClientInterface;
+    public function setAssoc(string $assoc): Factory;
 
     /**
      * @param array $query

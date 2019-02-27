@@ -2,8 +2,9 @@
 
 namespace Revolution\CarSensor;
 
-use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+
+use Revolution\CarSensor\Contracts\Factory;
 
 /**
  * https://webservice.recruit.co.jp/carsensor/
@@ -11,7 +12,7 @@ use GuzzleHttp\ClientInterface;
  * Class CarSensorClient
  * @package Revolution\CarSensor
  */
-class CarSensorClient implements CarSensorClientInterface
+class CarSensorClient implements Factory
 {
     use Api\UserCar;
     use Api\Catalog;
@@ -84,7 +85,7 @@ class CarSensorClient implements CarSensorClientInterface
      *
      * @return $this
      */
-    public function setApiUrl(string $url): CarSensorClientInterface
+    public function setApiUrl(string $url): Factory
     {
         $this->api_url = $url;
 
@@ -96,7 +97,7 @@ class CarSensorClient implements CarSensorClientInterface
      *
      * @return $this
      */
-    public function setApiVersion(string $version): CarSensorClientInterface
+    public function setApiVersion(string $version): Factory
     {
         $this->api_version = $version;
 
@@ -108,7 +109,7 @@ class CarSensorClient implements CarSensorClientInterface
      *
      * @return $this
      */
-    public function setClient(ClientInterface $client): CarSensorClientInterface
+    public function setClient(ClientInterface $client): Factory
     {
         $this->client = $client;
 
@@ -120,7 +121,7 @@ class CarSensorClient implements CarSensorClientInterface
      *
      * @return $this
      */
-    public function setKey(string $key): CarSensorClientInterface
+    public function setKey(string $key): Factory
     {
         $this->key = $key;
 
@@ -132,7 +133,7 @@ class CarSensorClient implements CarSensorClientInterface
      *
      * @return $this
      */
-    public function setAssoc(string $assoc): CarSensorClientInterface
+    public function setAssoc(string $assoc): Factory
     {
         $this->assoc = $assoc;
 

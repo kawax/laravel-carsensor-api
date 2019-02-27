@@ -4,7 +4,7 @@ namespace Revolution\CarSensor\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-use Revolution\CarSensor\CarSensorClient;
+use Revolution\CarSensor\Contracts\Factory;
 
 class CarSensorFacade extends Facade
 {
@@ -15,6 +15,6 @@ class CarSensorFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return CarSensorClient::class;
+        return Factory::class;
     }
 }

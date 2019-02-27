@@ -3,8 +3,8 @@
 https://webservice.recruit.co.jp/carsensor/
 
 ## Requirements
-- PHP >= 7.0
-- Laravel >= 5.5
+- PHP >= 7.1.3
+- Laravel >= 5.8
 
 ## Installation
 
@@ -41,7 +41,7 @@ $results = CarSensor::usedcar();
 dd($results);
 # returns object
 
-$usedcars = object_get($results, 'results.usedcar');;
+$usedcars = data_get($results, 'results.usedcar');;
 dd($usedcars);
 ```
 

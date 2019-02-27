@@ -3,20 +3,15 @@
 namespace Revolution\CarSensor\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Support\DeferrableProvider;
 
 use GuzzleHttp\Client;
 
 use Revolution\CarSensor\CarSensorClient;
+use Revolution\CarSensor\Contracts\Factory;
 
-class CarSensorServiceProvider extends ServiceProvider
+class CarSensorServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
-
     /**
      * Bootstrap the application services.
      *
@@ -34,7 +29,7 @@ class CarSensorServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(CarSensorClient::class, function ($app) {
+        $this->app->singleton(Factory::class, function ($app) {
             $client = new Client();
 
             $config = $app['config']['services']['carsensor'];
@@ -50,6 +45,6 @@ class CarSensorServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [CarSensorClient::class];
+        return [Factory::class];
     }
 }
