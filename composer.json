@@ -38,7 +38,7 @@
                 "Revolution\\CarSensor\\Providers\\CarSensorServiceProvider"
             ],
             "aliases": {
-                "CarSensor": "Revolution\\CarSensor\\Facades\\CarSensorFacade"
+                "CarSensor": "Revolution\\CarSensor\\Facades\\CarSensor"
             }
         }
     }
