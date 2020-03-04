@@ -3,8 +3,8 @@
 https://webservice.recruit.co.jp/carsensor/
 
 ## Requirements
-- PHP >= 7.1.3
-- Laravel >= 5.8
+- PHP >= 7.2
+- Laravel >= 6.0
 
 ## Installation
 
